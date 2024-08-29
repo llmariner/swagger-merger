@@ -1,0 +1,20 @@
+name: CI-post-merge
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  re-test:
+    runs-on:
+    - ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    - name: Run test
+      run: |
+        npm install -g yarn
+        rm -rf node_modules && yarn install --frozen-lockfile
+        yarn test

@@ -1,0 +1,45 @@
+{
+  "name": "swagger-merger",
+  "version": "0.1.0",
+  "description": "a simple merger of multiple swagger files into one",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/runtime": "^7.21.0",
+    "eslint": "^8.38.0",
+    "fs": "^0.0.1-security",
+    "jest": "^29.7",
+    "json-stable-stringify": "^1.1.1",
+    "prettier": "^2.8.7",
+    "rimraf": "^5.0.5",
+    "semver": "^7.6.2",
+    "zx": "7.2"
+  },
+  "scripts": {
+    "lint": "eslint . --cache",
+    "test:clean": "rimraf ./coverage",
+    "test": "yarn test:clean && jest --roots . --collect-coverage",
+    "regenerate": "node ./index.js"
+  },
+  "jest": {
+    "testMatch": [
+      "__tests__/**/*.[j]s?(x)",
+      "**/?(*.)+(spec|test).[j]s?(x)"
+    ]
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llm-operator/swagger-merger.git"
+  },
+  "author": "llm-operator",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/llm-operator/swagger-merger/issues"
+  },
+  "homepage": "https://github.com/llm-operator/swagger-merger#readme"
+}

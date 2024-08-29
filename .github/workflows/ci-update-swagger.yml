@@ -1,0 +1,33 @@
+name: CI-update-swagger
+on:
+  schedule:
+  # 1-5: Monday to Friday (skip weekend)
+  - cron: '0 12 * * 1-5'
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  update:
+    runs-on:
+    - ubuntu-latest
+    steps:
+    # Checkout swagger-merger repository
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    - name: checkout frontend
+      run: |
+        git clone https://github.com/llm-operator/frontend
+    - name: checkout dependencies
+      run: |
+        mkdir apis
+        ./update_repos.sh apis
+    - name: setup
+      run: |
+        npm install -g yarn
+        rm -rf node_modules && yarn install --frozen-lockfile
+    - name: run
+      run: |
+        yarn regenerate apis frontend
