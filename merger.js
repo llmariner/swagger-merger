@@ -61,7 +61,7 @@ export const findSwaggerFiles = async (baseDirectoryPath) => {
 //
 // Exported only for testing.
 export const packagePattern = new RegExp(
-  'package[ \\r\\n\\t]+((?:[A-Za-z0-9-]+\\.)*)([A-Za-z0-9-]+);'
+  'package[ \\r\\n\\t]+((?:[A-Za-z0-9_-]+\\.)*)([A-Za-z0-9_-]+);'
 );
 
 export const processSwaggerFile = async (filePath, dest) => {
