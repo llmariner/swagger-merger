@@ -93,7 +93,7 @@ const cnatixDeps = extractDependencies(frontendPkg.dependencies);
 cnatixDeps.push(...extractDependencies(frontendPkg.devDependencies));
 
 if (cnatixDeps.length == 0) {
-  console.log('no dependencies on @cloudnatix-types');
+  console.log('no dependencies on @llm-operator-types');
   process.exit(0);
 }
 
@@ -130,10 +130,10 @@ for (let dep of cnatixDeps) {
   if (!dep.hasUpdate) {
     continue;
   }
-  console.log(`updating ${dep.name}`);
+  console.log(`updating ${dep.name} from ${dep.currentVersion} to ${dep.latest}`);
   // This will rebuild node_modules directories which will be time-consuming,
   // but it is better to modify the file through yarn command.
-  await $`yarn upgrade @cloudnatix-types/${dep.name} 'git+ssh://git@github.com/cloudnatix/${dep.name}.git#${dep.latest}'`;
+  await $`yarn upgrade @llm-operator-types/${dep.name} 'git+ssh://git@github.com/llm-operator/${dep.name}.git#${dep.latest}'`;
 }
 
 // Invoke yarn command again, this will remove the old entry from yarn.lock file.
