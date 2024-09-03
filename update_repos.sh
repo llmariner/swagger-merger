@@ -27,8 +27,8 @@ for repo in ${repos[@]}; do
         needAction+=($repo)
         continue
     fi
-    git --git-dir "$DIR/$repo/.git" pull origin main 
-   
+    git --git-dir "$DIR/$repo/.git" pull origin main
+
 done
 
 echo ""
