@@ -133,7 +133,7 @@ for (let dep of cnatixDeps) {
   console.log(`updating ${dep.name} from ${dep.currentVersion} to ${dep.latest}`);
   // This will rebuild node_modules directories which will be time-consuming,
   // but it is better to modify the file through yarn command.
-  await $`yarn upgrade @llm-operator-types/${dep.name} 'git+http://git@github.com/llm-operator/${dep.name}.git#${dep.latest}'`;
+  await $`yarn upgrade @llm-operator-types/${dep.name} 'github.com/llm-operator/${dep.name}.git#${dep.latest}'`;
 }
 
 // Invoke yarn command again, this will remove the old entry from yarn.lock file.
