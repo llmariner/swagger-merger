@@ -133,6 +133,7 @@ for (let dep of cnatixDeps) {
   console.log(`updating ${dep.name} from ${dep.currentVersion} to ${dep.latest}`);
   // This will rebuild node_modules directories which will be time-consuming,
   // but it is better to modify the file through yarn command.
+  console.log(`yarn upgrade @llm-operator-types/${dep.name} 'git+https://github.com/llm-operator/${dep.name}.git#${dep.latest}'`);
   await $`yarn upgrade @llm-operator-types/${dep.name} 'git+https://github.com/llm-operator/${dep.name}.git#${dep.latest}'`;
 }
 
