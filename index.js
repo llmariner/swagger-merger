@@ -139,6 +139,7 @@ for (let dep of cnatixDeps) {
 // Invoke yarn command again, this will remove the old entry from yarn.lock file.
 await $`yarn --ignore-optional`
 
+console.log('creating a PR');
 await $`git switch -c ${branchName}`;
 await $`git commit -a -m "Update swagger.json"`;
 await $`git push origin ${branchName}`;
