@@ -32,7 +32,10 @@ jobs:
         rm -rf node_modules && yarn install --frozen-lockfile
     - name: debug
       run: |
-        git config --list
+        git config --get http
+        HTTP_CONFIG=$(git config --get http)
+        cd frontend
+        git config --add ${HTTP_CONFIG}
     - name: run
       run: |
         yarn regenerate apis frontend ${{ github.event.inputs.branch }}
