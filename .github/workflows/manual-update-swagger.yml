@@ -30,6 +30,9 @@ jobs:
       run: |
         npm install -g yarn
         rm -rf node_modules && yarn install --frozen-lockfile
+    - name: debug
+      run: |
+        git config --list
     - name: run
       run: |
         yarn regenerate apis frontend ${{ github.event.inputs.branch }}
