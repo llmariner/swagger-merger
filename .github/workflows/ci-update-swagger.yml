@@ -5,7 +5,7 @@ on:
   - cron: '0 12 * * 1-5'
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.CI_ROBOT_GITHUB_TOKEN }}
 
 jobs:
   update:
@@ -27,7 +27,7 @@ jobs:
     - name: setup
       run: |
         npm install -g yarn
-        rm -rf node_modules && yarn install --frozen-lockfile
+        rm -rf node_modules && yarn install
     - name: run
       run: |
         yarn regenerate apis frontend
