@@ -113,7 +113,7 @@ export const merge = async (dirs) => {
   const convertedSwaggerBase = {
     swagger: '2.0',
     info: {
-      title: 'llm-operator APIs',
+      title: 'llmariner APIs',
       version: 'v1.0',
     },
     consumes: ['application/json'],

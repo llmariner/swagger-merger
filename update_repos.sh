@@ -18,7 +18,7 @@ for repo in ${repos[@]}; do
     echo "Updating $repo to latest ..."
     if [ ! -d "$DIR/$repo" ]; then
         cd $DIR
-        git clone https://github.com/llm-operator/$repo
+        git clone https://github.com/llmariner/$repo
 	cd -
         continue
     fi
