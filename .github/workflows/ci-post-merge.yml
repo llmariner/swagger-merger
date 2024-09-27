@@ -16,5 +16,5 @@ jobs:
     - name: Run test
       run: |
         npm install -g yarn
-        rm -rf node_modules && yarn install --frozen-lockfile
+        rm -rf node_modules && yarn install
         yarn test

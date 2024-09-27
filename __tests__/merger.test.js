@@ -3,7 +3,7 @@ import { packagePattern } from '../merger.js';
 describe('package pattern', () => {
   it('matches simple proto', () => {
     const TEST_PROTO = `syntax = "proto3"
-package llm-operator.foobar.v1;
+package llmariner.foobar.v1;
 
 message FooBar {
 }
@@ -19,19 +19,19 @@ service FooBarService {
 
     const matchResult = packagePattern.exec(TEST_PROTO);
     expect(matchResult).not.toBeNull();
-    expect(matchResult[1]).toMatch('llm-operator.foobar.');
+    expect(matchResult[1]).toMatch('llmariner.foobar.');
     expect(matchResult[2]).toMatch('v1');
   });
 
   it('matches wrapped package', () => {
     const WRAPPED_PACKAGE_PROTO = `syntax = "proto3"
 package
-  llm-operator.foobar.v1;
+  llmariner.foobar.v1;
 `;
 
     const matchResult = packagePattern.exec(WRAPPED_PACKAGE_PROTO);
     expect(matchResult).not.toBeNull();
-    expect(matchResult[1]).toMatch('llm-operator.foobar.');
+    expect(matchResult[1]).toMatch('llmariner.foobar.');
     expect(matchResult[2]).toMatch('v1');
   });
 });

@@ -24,7 +24,7 @@ jobs:
         ssh-private-key: ${{ secrets.CI_ROBOT_SSH_PRIVATE_KEY }}
     - name: checkout frontend
       run: |
-        git clone git@github.com:llm-operator/frontend.git
+        git clone git@github.com:llmariner/frontend.git
     - name: checkout dependencies
       run: |
         mkdir apis
@@ -32,7 +32,7 @@ jobs:
     - name: setup
       run: |
         npm install -g yarn
-        rm -rf node_modules && yarn install --frozen-lockfile
+        rm -rf node_modules && yarn install
     - name: run
       run: |
         yarn regenerate apis frontend ${{ github.event.inputs.branch }}

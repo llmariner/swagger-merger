@@ -34,12 +34,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/llm-operator/swagger-merger.git"
+    "url": "git+https://github.com/llmariner/swagger-merger.git"
   },
-  "author": "llm-operator",
+  "author": "llmariner",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/llm-operator/swagger-merger/issues"
+    "url": "https://github.com/llmariner/swagger-merger/issues"
   },
-  "homepage": "https://github.com/llm-operator/swagger-merger#readme"
+  "homepage": "https://github.com/llmariner/swagger-merger#readme"
 }

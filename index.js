@@ -65,10 +65,10 @@ const parseVersion = (spec) => {
 
 const extractDependencies = (deps) =>
   Object.keys(deps).filter((name) =>
-    name.indexOf('@llm-operator-types/') == 0
+    name.indexOf('@llmariner-types/') == 0
   ).map((name) => {
     return {
-      name: name.slice('@llm-operator-types/'.length),
+      name: name.slice('@llmariner-types/'.length),
       value: deps[name],
       currentVersion: parseVersion(deps[name]),
     };
@@ -93,7 +93,7 @@ const cnatixDeps = extractDependencies(frontendPkg.dependencies);
 cnatixDeps.push(...extractDependencies(frontendPkg.devDependencies));
 
 if (cnatixDeps.length == 0) {
-  console.log('no dependencies on @llm-operator-types');
+  console.log('no dependencies on @llmariner-types');
   process.exit(0);
 }
 
@@ -133,7 +133,7 @@ for (let dep of cnatixDeps) {
   console.log(`updating ${dep.name} from ${dep.currentVersion} to ${dep.latest}`);
   // This will rebuild node_modules directories which will be time-consuming,
   // but it is better to modify the file through yarn command.
-  await $`yarn upgrade @llm-operator-types/${dep.name} 'git+ssh://git@github.com/llm-operator/${dep.name}.git#${dep.latest}'`;
+  await $`yarn upgrade @llmariner-types/${dep.name} 'git+ssh://git@github.com/llmariner/${dep.name}.git#${dep.latest}'`;
 }
 
 // Invoke yarn command again, this will remove the old entry from yarn.lock file.

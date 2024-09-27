@@ -16,7 +16,7 @@ Please install them.  Also you need to log into github CLI.
 Then, check out the frontend.
 
 ```sh
-% git clone https://github.com/llm-operator/frontend
+% git clone https://github.com/llmariner/frontend
 ```
 
 Also it requires to check out the dependency repositories. You can use `update_repos.sh`
