@@ -1,6 +1,6 @@
 # Swagger-merger
 
-Swagger-merger is a set of scripts that merges and updates the swagger files
+Swagger-merger is a set of scripts that merge and update the swagger files
 and internal dependencies of our frontend.
 
 # How to use
