@@ -3,6 +3,7 @@
 DIR=$1
 
 repos=(
+    "api-usage"
     "cluster-manager"
     "file-manager"
     "inference-manager"
