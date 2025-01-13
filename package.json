@@ -6,7 +6,7 @@
   "type": "module",
   "private": true,
   "dependencies": {
-    "@babel/eslint-parser": "^7.19.1",
+    "@babel/eslint-parser": "^7.26.5",
     "@babel/plugin-transform-runtime": "^7.25.9",
     "@babel/preset-env": "^7.24.4",
     "@babel/runtime": "^7.21.0",
