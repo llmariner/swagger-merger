@@ -8,10 +8,7 @@ import { merge } from './merger.js';
 $.verbose = false;
 
 const reviewers = [
-  'guangrui-cloudnatix',
-  'kenji-cloudnatix',
   'takeshi-cloudnatix',
-  'aya-cloudnatix',
 ];
 
 // In the actions runner, the access token should be stored
